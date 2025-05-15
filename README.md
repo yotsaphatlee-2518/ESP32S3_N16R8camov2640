@@ -29,5 +29,9 @@ Now, you can choose two types of SSID for your ESP32:
 - You can use dynamic naming with a prefix. Dynamic means, it differs from device to device because it makes SSID postfix is unique MAC of used esp32.
 - You can use static ssid, this feature is the default.
 
+When run, the display will be displayed on the monitor.
+![image alt](https://github.com/yotsaphatlee-2518/ESP32S3_N16R8camov2640/blob/52adb9e2e606f106fb6709ab0b59103b4542a99b/PIC/1747283546665.jpg
+)
+
 
 

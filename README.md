@@ -1,4 +1,4 @@
-# This project is currently deprecated. Some bugs will be fixed once the final design is complete—I'm just waiting until I have enough free time.
+# This project is a complete streaming display project using esp32-s3 with ov2640 camera which has wifimanager + mqtt system and is ready to connect to node-red..
 
 ### I'm keeping a copy of these deprecated projects—maybe I’m just the librarian type. However, I do NOT recommend using this project.
 

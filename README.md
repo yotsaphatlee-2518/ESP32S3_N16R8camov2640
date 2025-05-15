@@ -4,8 +4,12 @@
 | ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | **Tested On Targets** |  &#10060; Not working every ESP32|&#10060;|&#9989;|&#9989;|  &#10060; |  &#10060; | &#10060;|&#10060;|
 
-### Usage, you just clone this link https://github.com/yotsaphatlee-2518/ESP32S3_N16R8camov2640.git and put it in C:\Users\xxx\esp\esp-idf and run it like this..
-
+### Usage, you just clone this link https://github.com/yotsaphatlee-2518/ESP32S3_N16R8camov2640.git and put it in C:\Users\xxx\esp\esp-idf and run it like this.
+    1.C:\Users\xxx\esp\esp-idf>cd ESP32S3_N16R8camov2640
+    2.idf.py set-target esp32s3
+    3.idf.py menuconfig
+    4.idf.py build
+    5.idf.py -p COMxx flash monitor
 
 # First Stable Version  
 

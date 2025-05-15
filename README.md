@@ -5,6 +5,9 @@
 | ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | **Tested On Targets** |  &#10060; Not working every ESP32|&#10060;|&#9989;|&#9989;|  &#10060; |  &#10060; | &#10060;|&#10060;|
 
+### Structure of ESP32S3_N16R8camov2640  
+![image alt](https://github.com/yotsaphatlee-2518/ESP32S3_N16R8camov2640/blob/74446f2b24ace2f015ff6b2798d865e3bbcb936a/PIC/1747297138379.jpg)
+
 ### Usage, you just clone this link https://github.com/yotsaphatlee-2518/ESP32S3_N16R8camov2640.git and put it in C:\Users\xxx\esp\esp-idf and run it like this.
     1.C:\Users\xxx\esp\esp-idf>cd ESP32S3_N16R8camov2640
     2.idf.py set-target esp32s3

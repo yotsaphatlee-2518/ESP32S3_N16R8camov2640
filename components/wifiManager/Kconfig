@@ -1,0 +1,369 @@
+# Configuration options for WifiManager
+
+menu "WifiManager Configuration"
+	menu "Wifi Task Configuration" # Submenu for Wifi Task Configuration
+
+		config WIFI_CONNECT_TASK_PRIORITY
+			int "Task Priority"
+			default 5
+			range 2 6
+			help
+				Enter the priority for the WifiManager task. Real priority will be 1 less than the value entered.
+
+		config WIFI_CONNECT_TASK_STACK_SIZE
+			int "Task Stack Size"
+			default 4096
+			help
+				Enter the stack size for the Wifi Task.
+
+		config WIFI_CONNECT_TASK_CORE_ID
+			int "Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the Wifi Task.
+
+		config WIFI_SCAN_TASK_PRIORITY
+			int "Scan Task Priority"
+			default 5
+			range 2 6
+			help
+				Enter the priority for the Wifi Scan Task. Real priority will be 1 less than the value entered.
+				
+		config WIFI_SCAN_TASK_STACK_SIZE
+			int "Scan Task Stack Size"
+			default 4096
+			help
+				Enter the stack size for the Wifi Scan Task.
+				
+		config WIFI_SCAN_TASK_CORE_ID
+			int "Scan Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the Wifi Scan Task.
+
+	endmenu # End of Wifi Task Configuration
+
+	menu "HTTP Server Task Configuration" # Submenu for HTTP Server Task Configuration
+
+		config HTTP_SERVER_TASK_PRIORITY
+			int "Task Priority"
+			default 5
+			range 2 6
+			help
+				Enter the priority for the HTTP Server task. Real priority will be 1 less than the value entered.
+
+		config HTTP_SERVER_TASK_STACK_SIZE
+			int "Task Stack Size"
+			default 8192
+			help
+				Enter the stack size for the HTTP Server Task.
+
+		config HTTP_SERVER_TASK_CORE_ID
+			int "Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the HTTP Server Task.
+	endmenu # End of HTTP Server Task Configuration
+
+	menu "Wifi Manager Init Task Configuration" # Submenu for Wifi Manager Init Task Configuration
+
+		config WIFI_MANAGER_INIT_TASK_PRIORITY
+			int "Task Priority"
+			default 6
+			range 2 6
+			help
+				Enter the priority for the Wifi Manager Init Task. Real priority will be 1 less than the value entered.
+
+		config WIFI_MANAGER_INIT_TASK_STACK_SIZE
+			int "Task Stack Size"
+			default 2048
+			help
+				Enter the stack size for the Wifi Manager Init Task.
+
+		config WIFI_MANAGER_INIT_TASK_CORE_ID
+			int "Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the Wifi Manager Init Task.
+	endmenu # End of Wifi Manager Init Task Configuration
+
+	menu "NVS Task Configration"
+		config NVS_TASK_PRIORITY
+			int "Task Priority"
+			default 5
+			range 2 6
+			help
+				Enter the priority for the NVS task. Real priority will be 1 less than the value entered.
+
+		config NVS_TASK_STACK_SIZE
+			int "Task Stack Size"
+			default 2048
+			help
+				Enter the stack size for the NVS Task.
+
+		config NVS_TASK_CORE_ID
+			int "Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the NVS Task.
+
+	endmenu # End of NVS Task Configuration
+
+	menu "Button Interrupt Task Configuration"
+
+		config USE_BUTTON_INT
+			bool "Use Button Interrupt"
+			default y
+			help
+				Enable to use button interrupt for the clearing credentials using the Button or Rerty number of times for disconnection.
+				If you want to use maximum number of retries for the disconnection, then disable this option.
+
+		config BUTTON_INT_TASK_PRIORITY
+			int "Button Interrupt Task Priority"
+			default 5
+			range 2 6
+			help
+				Enter the priority for the Button Interrupt Task. Real priority will be 1 less than the value entered.
+		
+		config BUTTON_INT_TASK_STACK_SIZE
+			int "Button Interrupt Task Stack Size"
+			default 2048
+			help
+				Enter the stack size for the Button Interrupt Task.
+		
+		config BUTTON_INT_TASK_CORE_ID
+			int "Button Interrupt Task Core ID"
+			default 0
+			range 0 1
+			help
+				Enter the core ID for the Button Interrupt Task.
+
+	endmenu # End of Button Interrupt Task Configuration
+
+	menu "AP Configuration"
+
+		config USE_DYNAMIC_AP_NAME
+			bool "Use Dynamic AP"
+			default n
+			help
+				Enable to use dynamic AP Name configuration. This naming will be based on the MAC address of the ESP32.
+
+		config WIFI_AP_SSID
+			string "SSID for AP"
+			default "ESP32S3_N16R8_AP"
+			range 5 32
+			help
+				Enter the SSID for the access point.
+
+		config WIFI_AP_PASS
+			string "Password for AP"
+			default "123456"
+			range 8 64
+			help
+				Enter the password for the access point.
+
+		config WIFI_AP_CHANNEL
+			int "Channel for AP"
+			default 1
+			range 1 13
+			help
+				Enter the channel for the access point.
+
+		config WIFI_AP_MAX_CONNECTIONS
+			int "Max Connections for AP"
+			default 4
+			range 1 8
+			help
+				Enter the maximum number of connections for the access point.
+
+		config WIFI_AP_SSID_HIDDEN
+			int "Hidden SSID"
+			default 0
+			range 0 1
+			help
+				Enable to hide the SSID of the access point.
+
+		config WIFI_AP_BEACON_INTERVAL
+			int "Beacon Interval"
+			default 100
+			range 100 60000
+			help
+				Enter the beacon interval for the access point.
+
+		config WIFI_AP_IP_ADDR
+			string "IP Address for AP"
+			default "192.168.0.24"
+			help
+				Enter the IP address for the access point.
+
+		config WIFI_AP_IP_GATEWAY
+			string "Gateway for AP"
+			default "192.168.0.24"
+			help
+				Enter the gateway for the access point.
+
+		config WIFI_AP_IP_NETMASK
+			string "Netmask for AP"
+			default "255.255.255.0"
+			help
+				Enter the netmask for the access point.
+
+		#!TODO: Add DNS Server Configuration
+	endmenu # End of AP Configuration
+
+	menu "Wifi Configuration"
+
+		config WIFI_BANDWIDTH
+			int "Bandwidth"
+			default 1
+			range 1 2
+			help
+				Enter the bandwidth for the access point.
+
+		config WIFI_STA_POWER_SAVE #!TODO: Make it choice with proper names
+			int "Power Save"
+			default 0
+			range 0 2 # 0: Disable, 1: Minimum, 2: Maximum
+			help
+				Enable to enable power save mode for the station.
+
+		config MAX_SSID_LENGTH
+			int "Max SSID Length"
+			default 32
+			range 5 32
+			help
+				Enter the maximum length of the SSID.
+
+		config MAX_PASSWORD_LENGTH
+			int "Max Password Length"
+			default 64
+			range 8 64
+			help
+				Enter the maximum length of the password.
+
+		config MAX_CONNECTION_RETRIES
+			int "Max Connection Retries"
+			default 5
+			range 1 10
+			help
+				Enter the maximum number of connection retries.
+
+		config MAX_SCAN_LIST_SIZE
+			int "Max Scan List Size"
+			default 10
+			range 3 20
+			help
+				Enter the maximum size of the scan list.
+	endmenu # End of Wifi Configuration
+
+	menu "Wifi Scan Configration"
+
+		config WIFI_SCAN_LIST_SIZE
+			int "Scan List Size"
+			default 13
+			range 3 20
+			help
+				Enter the size of the scan list.
+
+		config WIFI_SCAN_SSID
+			string "SSID to Scan"
+			default NULL
+			range 0 32
+			help
+				Enter the SSID to scan.
+
+		config WIFI_SCAN_BSSID
+			string "BSSID to Scan"
+			default NULL
+			range 0 32
+			help
+				Enter the BSSID to scan.
+
+		config WIFI_SCAN_CHANNEL
+			int "Channel to Scan"
+			default 0
+			range 0 13
+			help
+				Enter the channel to scan.
+		
+		config WIFI_SCAN_SHOW_HIDDEN
+			int "Hidden SSID"
+			default 0
+			range 0 1
+			help
+				Enable to scan hidden SSID.
+
+		config WIFI_SCAN_TYPE
+			int "Scan Type"
+			default 0
+			range 0 1
+			help
+				Enter the scan type.
+				0: Passive Scan
+				1: Active Scan
+
+		config WIFI_SCAN_TIME_MIN
+			int "Minimum Scan Time"
+			default 0
+			range 0 1000
+			help
+				Enter the minimum scan time.
+		
+		config WIFI_SCAN_TIME_MAX
+			int "Maximum Scan Time"
+			default 0
+			range 0 1000
+			help
+				Enter the maximum scan time.
+	endmenu # End of Wifi Scan Configuration
+
+	menu "Wifi Manager Project Specific Configuration"
+
+		config USE_REF_COUNT
+			bool "Use Reference Count"
+			default y
+			help
+				Enable to use reference count for the WifiManager. 
+
+	endmenu # End of Wifi Manager Project Specific Configuration
+
+	menu "Button Interrupt Settings"
+
+		config BUTTON_INT_PIN
+			int "Button Interrupt Pin"
+			default 0
+			help
+				Enter the GPIO pin number for the button interrupt.
+
+		config BUTTON_INT_TYPE
+			choice
+				prompt "Button Interrupt Type"
+				default BUTTON_FALLING_EDGE
+
+				config BUTTON_RISING_EDGE
+						bool "Rising Edge"
+
+				config BUTTON_FALLING_EDGE
+						bool "Falling Edge"
+			endchoice
+	
+		config BUTTON_PULL_TYPE
+			choice
+				prompt "Button Pull Type"
+				default BUTTON_PULLUP
+
+				config BUTTON_PULLUP
+						bool "Pull Up"
+
+				config BUTTON_PULLDOWN
+						bool "Pull Down"
+			endchoice			
+
+	endmenu # End of Button Interrupt Settings
+
+endmenu	# End of WifiManager Configuration
